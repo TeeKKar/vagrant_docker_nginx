@@ -1,6 +1,5 @@
 - hosts: all
   become_user: root
   roles:
-    - install
     - { role: geerlingguy.docker, vars: { docker_users: ["vagrant"] } }
     - nginx
