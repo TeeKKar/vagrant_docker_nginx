@@ -6,7 +6,7 @@ Vagrant.configure("2") do |hello|
   hello.vm.provision "shell", path: "install.sh"
 
   hello.vm.provision "ansible_local" do |ansible|
-    install = true
+    install = false
     ansible.become = true
     ansible.playbook = "docker_nginx/playbook.yml"
     ansible.galaxy_role_file = "requirements.yml"
