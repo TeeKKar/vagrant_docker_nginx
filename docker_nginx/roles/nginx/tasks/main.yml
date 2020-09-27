@@ -1,0 +1,7 @@
+---
+- name: Create a nginx container
+  community.general.docker_container:
+    name: aditya-nginx
+    image: nginx
+    ports:
+      - "80:80"
