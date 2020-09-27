@@ -2,5 +2,5 @@
 
 yum update -y
 yum install epel-release -y
-yum install ansible python-pip -y
-pip install docker
+yum install python-pip -y
+pip install docker ansible
