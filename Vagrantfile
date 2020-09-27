@@ -6,12 +6,12 @@ Vagrant.configure("2") do |hello|
   hello.vm.provision "shell", path: "install.sh"
 
   hello.vm.provision "ansible_local" do |ansible|
+    install = false
     ansible.become = true
     ansible.playbook = "docker_nginx/playbook.yml"
     ansible.galaxy_role_file = "requirements.yml"
     ansible.galaxy_roles_path = "/etc/ansible/roles"
     ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
-    start_at_task = "install"
   end
 
 end
